@@ -2,11 +2,6 @@
   (function () {
     let meals = "";
 
-    // Get favorite meals list from localstorage
-    const favoriteMealsList = JSON.parse(
-      window.localStorage.getItem("favoriteMealsList")
-    );
-
     favoriteMealsList.forEach((meal) => {
       // extract tags of each meal
       let tags = [];

@@ -2,14 +2,14 @@ const API_URL = "https://www.themealdb.com/api/json/v1/1/";
 let favoriteMealsList = [];
 let mealsData = [];
 
+// if localstorage has favorite meals list
+let list = JSON.parse(window.localStorage.getItem("favoriteMealsList"));
+if (list) {
+  favoriteMealsList = list;
+}
+
 // Add and Remove favorite meals from list of favorite meals
 const toggleFavoriteMeals = (refBtn) => {
-  // if localstorage has favorite meals list
-  let list = JSON.parse(window.localStorage.getItem("favoriteMealsList"));
-  if (list) {
-    favoriteMealsList = list;
-  }
-
   const ref = document.querySelectorAll(`.meal-${refBtn.id}`);
 
   // toggle class "selected" on click
@@ -21,13 +21,25 @@ const toggleFavoriteMeals = (refBtn) => {
       favoriteMealsList = favoriteMealsList.filter(
         (meal) => meal.idMeal !== btn.id
       );
-      window.location.replace(`./favoritePage.html`);
+
+      location.reload();
     } else {
       // not selected --> add selected and add that meal to favorite list
       btn.innerHTML = `<i class="fa-solid fa-heart"></i>`;
       btn.classList.add("selected");
       const index = mealsData.findIndex((meal) => meal.idMeal === btn.id);
-      favoriteMealsList = [...favoriteMealsList, mealsData[index]];
+      if (index !== -1) {
+        // If meal exist
+
+        const favIndex = favoriteMealsList.findIndex((favMeal) => {
+          // If meal is not already in favorite list then add it
+          return favMeal.idMeal === mealsData[index].idMeal;
+        });
+
+        if (favIndex === -1) {
+          favoriteMealsList = [...favoriteMealsList, mealsData[index]];
+        }
+      }
     }
   });
 

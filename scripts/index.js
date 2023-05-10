@@ -80,6 +80,15 @@
           }
         }
 
+        const favIndex = favoriteMealsList.findIndex((favMeal) => {
+          return favMeal.idMeal === meal.idMeal;
+        });
+
+        let favIcon = `<i class="fa-regular fa-heart"></i>`;
+        if (favIndex !== -1) {
+          favIcon = `<i class="fa-solid fa-heart"></i>`;
+        }
+
         // create card for each meal with appropriate meal-data
         meals += `<div class="meal-card">
           <div class="meal-image">
@@ -89,7 +98,7 @@
             />
           </div>
           <div class="meal-content">
-          <div class="meal-heading"><h1>${meal.strMeal}</h1><button id="${meal.idMeal}" class="add-to-favorite meal-${meal.idMeal}"><i class="fa-regular fa-heart"></i></button></div>
+          <div class="meal-heading"><h1>${meal.strMeal}</h1><button id="${meal.idMeal}" class="add-to-favorite meal-${meal.idMeal}">${favIcon}</button></div>
             <hr/>
             <div class="tags-container">${tagsHTML}</div>
             <p>Category: <span>${meal.strCategory}</span></p>

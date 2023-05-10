@@ -1,4 +1,4 @@
-# Meal-App
+# Meal-App [Live Link](https://tridevverma.github.io/Meal-App/)
 This is a web app for both mobile and desktop devices which lists meals and recipes. It has clean and attractive UI combined with powerfull features. 
 Whole website is extreamy simple, intuitive and easy to use.
 

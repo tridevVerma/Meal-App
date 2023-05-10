@@ -14,7 +14,7 @@
     // On change of input box
     const searchInput = document.querySelector("#search-meal");
     searchInput.focus();
-    searchInput.addEventListener("keydown", (e) =>
+    searchInput.addEventListener("input", (e) =>
       searchByName(e, e.target.value)
     );
 
@@ -34,9 +34,13 @@
   // Get data from API corresponding to searched query
   const searchByName = async (e, query) => {
     try {
-      const response = await fetch(API_URL + `search.php?s=${query}`);
-      const data = await response.json();
-      mealsData = data.meals; // array from script.js
+      if (query.length > 0) {
+        const response = await fetch(API_URL + `search.php?s=${query}`);
+        const data = await response.json();
+        mealsData = data.meals; // array from script.js
+      } else {
+        mealsData = [];
+      }
       populateMeals(); // populate meals as we get results from API
     } catch (err) {
       console.log("Error:", err);
@@ -111,6 +115,9 @@
       detailsBtns.forEach((link) => {
         link.addEventListener("click", (e) => showDetails(e, link));
       });
+    } else {
+      mealsContainer.style.display = "block";
+      mealsContainer.innerHTML = `<div class="no-content"><h1>Search Meals...</h1></div>`;
     }
   };
 }

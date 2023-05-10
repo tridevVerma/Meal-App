@@ -59,7 +59,10 @@ const showDetails = (e, link) => {
 };
 
 // search new meal from navbar
-if (window.location.pathname.substring(27) !== "index.html") {
+if (
+  window.location.pathname.substring(location.pathname.length - 10) !==
+  "index.html"
+) {
   const searchInput = document.querySelector("#search-meal");
   searchInput.addEventListener("click", () => {
     window.location.replace(`./index.html`);

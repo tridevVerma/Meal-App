@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META CHARSET -->
+    <meta charset="UTF-8" />
+    <!-- META VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- META EDGE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- TITLE -->
+    <title>Meal App</title>
+    <!-- META DESCRIPTION -->
+    <meta
+      name="description"
+      content="A website to search and categorize different receipes"
+    />
+    <!-- META KEYWORDS -->
+    <meta name="keywords" content="MEALS, RECIPE" />
+    <!-- META AUTHOR -->
+    <meta name="author" content="Tridev Verma" />
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/ico" href="./images/logo.png" />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <!-- FONT-AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+      integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css"
+      integrity="sha512-WidMaWaNmZqjk3gDE6KBFCoDpBz9stTsTZZTeocfq/eDNkLfpakEd7qR0bPejvy/x0iT0dvzIq4IirnBtVer5A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+      integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div>
+        <ul>
+          <li class="logo-container">
+            <!-- View Home Page -->
+            <a href="#" class="home-btn">
+              <img src="./images/logo.png" alt="logo" class="logo" />
+              <span>Search Meals</span>
+            </a>
+          </li>
+
+          <li class="favorite-meal-btn">
+            <!-- View Favorite Meal Page -->
+            <a href="#" class="favorite-meals-page">
+              <i class="fa-solid fa-heart"></i>
+              <span>Favorite Meals</span>
+            </a>
+          </li>
+
+          <li class="search-meal-form-container">
+            <form class="search-meal-form">
+              <input
+                type="text"
+                name="search-meal"
+                id="search-meal"
+                placeholder="Search meals here..."
+              />
+              <button type="submit" class="search-meal">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <div class="meals-display-container">
+        <div class="meals-container">
+          <h1>Search Meals...</h1>
+        </div>
+      </div>
+    </main>
+
+    <!-- BOOTSTRAP JS BUNDLE -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CUSTOM JS SCRIPT -->
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
